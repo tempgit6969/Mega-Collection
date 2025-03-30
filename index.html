@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Backups</title>
+    <style>
+        :root {
+            --bg-dark: linear-gradient(45deg, #141e30, #243b55);
+            --bg-light: linear-gradient(45deg, #ffffff, #f0f0f0);
+            --text-dark: white;
+            --text-light: black;
+            --card-dark: rgba(255, 255, 255, 0.1);
+            --card-light: rgba(0, 0, 0, 0.1);
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--text-dark);
+            background: var(--bg-dark);
+            transition: background 0.3s, color 0.3s;
+        }
+        body.light-mode {
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+        .container {
+            text-align: center;
+            z-index: 2;
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .toggle-btn {
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        body.light-mode .toggle-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        .links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: var(--card-dark);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+        }
+        body.light-mode .card {
+            background: var(--card-light);
+        }
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .card:hover img {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+        <div class="title">Mega Backups</div>
+        <div class="links">
+            <a href="https://mega.nz/folder/M95xyBYT#PdwFZ_uRt1ys80MzQZ6WeA" class="card" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/mega-icon.svg" alt="Google">
+                Mega Collection1
+            </a>
+            <a href="https://mega.nz/folder/CC5VDTAQ#w85AcjQUeYn1v65gPl--iQ" class="card" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/mega-icon.svg" alt="GitHub">
+                Mega Collection2
+            </a>
+            <a href="https://www.dropbox.com" class="card" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Dropbox_Icon.svg" alt="Dropbox">
+                Dropbox
+            </a>
+            <a href="https://www.mega.nz" class="card" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Mega.nz_Logo.png" alt="Mega.nz">
+                Mega.nz
+            </a>
+            <a href="https://www.onedrive.com" class="card" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Microsoft_OneDrive_logo.svg" alt="OneDrive">
+                OneDrive
+            </a>
+        </div>
+    </div>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>
